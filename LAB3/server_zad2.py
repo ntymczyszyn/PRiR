@@ -23,7 +23,7 @@ def server_main(image_path, n_clients):
     fragments, coords  = split_image(image, n_clients)
 
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind(('192.168.1.15', 2040))
+    server_socket.bind(('127.0.0.1', 2040))
     server_socket.listen(n_clients)
     print("Serwer nasłuchuje...")
     processed_fragments = []
@@ -41,4 +41,4 @@ def server_main(image_path, n_clients):
     print("Obraz przetworzony zapisany jako processed_image.png")
 
 if __name__ == "__main__":  
-    server_main("strus.jpg", 9)
+    server_main("strus.jpeg", 1)
